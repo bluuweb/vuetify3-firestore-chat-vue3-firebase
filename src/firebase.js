@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAnI0QS6f7bM29ePYDEmxa9eemdJuIpuqY",
-    authDomain: "vuetifychat-5dc95.firebaseapp.com",
-    projectId: "vuetifychat-5dc95",
-    storageBucket: "vuetifychat-5dc95.appspot.com",
-    messagingSenderId: "52515863054",
-    appId: "1:52515863054:web:dcb406aa99c0bd52675a5f",
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId,
 };
 
 const app = initializeApp(firebaseConfig);

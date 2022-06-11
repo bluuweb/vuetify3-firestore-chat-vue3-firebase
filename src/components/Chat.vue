@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch, watchEffect } from "vue";
 import { auth, db } from "../firebase";
 import { collection, query, onSnapshot, orderBy } from "firebase/firestore";
 
@@ -35,10 +35,12 @@ const unsubscribe = onSnapshot(q, (snapshot) => {
                 ...change.doc.data(),
             });
 
-            if (chatsRef.value !== null) {
-                console.log(chatsRef.value.scrollHeight);
-                window.scrollTo(0, chatsRef.value.scrollHeight);
-            }
+            setTimeout(() => {
+                if (chatsRef.value !== null) {
+                    console.log(chatsRef.value.scrollHeight);
+                    window.scrollTo(0, chatsRef.value.scrollHeight);
+                }
+            }, 60);
         }
     });
 });
